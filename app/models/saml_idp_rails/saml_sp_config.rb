@@ -4,13 +4,11 @@ module SamlIdpRails
   class SamlSpConfig < ApplicationRecord
     before_create :generate_uuid
 
-    if connection.adapter_name.downcase.starts_with?("sqlite")
-      serialize :name_id_formats, coder: JSON
-      serialize :assertion_consumer_services, coder: JSON
-      serialize :single_logout_services, type: Hash, coder: JSON
-      serialize :contact_person, type: Hash, coder: JSON
-      serialize :saml_attributes, coder: JSON
-    end
+    serialize :name_id_formats, JSON
+    serialize :assertion_consumer_services, JSON
+    serialize :single_logout_services, JSON
+    serialize :contact_person, JSON
+    serialize :saml_attributes, JSON
 
     def parsed_metadata
       metadata_attr = ::SamlIdp::IncomingMetadata.new(raw_metadata).to_h
