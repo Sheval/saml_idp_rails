@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/zogoo/saml_idp_rails"
   spec.metadata["changelog_uri"] = "https://github.com/Zogoo/saml_idp_rails/blob/master/CHANGELOG.md"
 
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.5", "< 3.2")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.5", "< 4.0")
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
